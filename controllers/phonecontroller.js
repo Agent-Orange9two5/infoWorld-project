@@ -54,7 +54,7 @@ const getPhones = async (req,res,next) => {
     }
 
 
-    const phones = await Phone.find().exec(); 
+    const phones = await Phone.find(query).exec(); 
 
     res.json(phones); 
 }
