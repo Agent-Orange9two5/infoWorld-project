@@ -31,6 +31,7 @@ const getPhones = async (req,res,next) => {
     const minprice = req.query.minprice;
     const maxprice = req.query.maxprice;
     const color = req.query.color;
+    const technology = req.query.technology;
 
     let query={};
 
@@ -52,6 +53,9 @@ const getPhones = async (req,res,next) => {
     if(color){
         query = {...query, color}; 
     }
+    if(technology){
+      query = {...query, technology}; 
+  }
 
 
     const phones = await Phone.find(query).exec(); 
